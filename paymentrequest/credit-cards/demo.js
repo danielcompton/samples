@@ -13,15 +13,15 @@ function initPaymentRequest() {
   }];
 
   let details = {
-    total: {label: 'Donation', amount: {currency: 'USD', value: '55.00'}},
+    total: {label: 'Free Trial + Charge in 2 months', amount: {currency: 'USD', value: '00.00'}},
     displayItems: [
       {
-        label: 'Original donation amount',
-        amount: {currency: 'USD', value: '65.00'},
+        label: 'Free Trial',
+        amount: {currency: 'USD', value: '00.00'},
       },
       {
-        label: 'Friends and family discount',
-        amount: {currency: 'USD', value: '-10.00'},
+        label: 'Billing begins on 2019-03-23',
+        amount: {currency: 'USD', value: '00.00'},
       },
     ],
   };
@@ -80,6 +80,7 @@ function instrumentToJsonString(instrument) {
   return JSON.stringify({
     methodName: instrument.methodName,
     details: details,
+    instrument: instrument,
   }, undefined, 2);
 }
 
